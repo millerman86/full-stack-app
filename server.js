@@ -16,7 +16,7 @@ app.use(morgan('dev'))
 
 
 app.use('/', (req, res) => {
-    res.send('Hello amren')
+    res.send('Hello bob')
 })
 
 mongoose.connect(
