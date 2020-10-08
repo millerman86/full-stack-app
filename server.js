@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const expressjwt = require('express-jwt')
 const cors = require('cors')
+const path = require('path')
 
 const app = express()
 require('dotenv').config()
@@ -12,7 +13,9 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
-app.use('/test', (req, res) => {
+
+
+app.use('/', (req, res) => {
     res.send('Hello World')
 })
 
