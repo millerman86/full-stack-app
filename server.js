@@ -13,6 +13,9 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
+app.use('/test', (req, res) => {
+    res.send('amren miller')
+})
 
 mongoose.connect(
     process.env.DATABASE_URL || 'mongodb://localhost:27017/full-stack-app', // all collections will go into one database entry
