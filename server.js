@@ -23,9 +23,9 @@ app.use('/auth', require('./routes/authRouter'))
 app.use('/api/comment', require('./routes/commentRouter'))
 
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+// });
 
 
 app.listen(process.env.PORT || 9000, () => {
