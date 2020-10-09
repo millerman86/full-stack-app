@@ -15,9 +15,7 @@ app.use(morgan('dev'))
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-app.use('/test', (req, res) => {
-    res.send('amren miller')
-})
+app.use('/auth', require('./routes/authRouter'))
 
 mongoose.connect(
     process.env.DATABASE_URL || 'mongodb://localhost:27017/full-stack-app', // all collections will go into one database entry
