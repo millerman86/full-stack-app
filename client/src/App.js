@@ -23,7 +23,7 @@ function App() {
       <Switch>
         <Route
           exact path="/" 
-          render={() => <div>amren miller is a programmer{<span>{comments}</span>}</div>}
+          render={() => <div>amren miller is a programmer</div>}
           />
         </Switch>
     </div>
