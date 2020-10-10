@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
-const config = require('config');
 require('dotenv').config()
-require('./default.json')
 
-console.log('here is uri', process.env.DATABASE_URI);
+console.log('this is just a test');
 
 const connectDB = async () => {
 	try {
-		await mongoose.connect(process.env.DATABASE_URI, {
+		await mongoose.connect(process.env.DATABASE_URI || 'mongodb://localhost:27017/full-stack-app', {
 			useNewUrlParser: true,
 			useCreateIndex: true,
 			useFindAndModify: false,
@@ -23,3 +21,4 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+
