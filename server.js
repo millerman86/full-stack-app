@@ -18,7 +18,7 @@ app.use(morgan('dev'))
 
 
 app.use('/auth', require('./routes/authRouter'))
-app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['RS256']})) // Remember: The token is in the header
+// app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['RS256']})) // Remember: The token is in the header
 
 
 app.use(express.static(path.join(__dirname, "client", "build")))
