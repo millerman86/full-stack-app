@@ -5,7 +5,7 @@ require('dotenv').config()
 let db;
 if (process.env.NODE_ENV === 'production') {
 	console.log(`Connecting in ${process.env.NODE_ENV}`);
-	db = process.env.MONGO_URI || ''
+	db = process.env.MONGO_URI
 }
 
 if (process.env.NODE_ENV === 'development') {
