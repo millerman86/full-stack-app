@@ -3,7 +3,7 @@ const config = require('config');
 require('dotenv').config()
 require('./default.json')
 
-
+console.log('here is uri', process.env.DATABASE_URI);
 
 const connectDB = async () => {
 	try {
