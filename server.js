@@ -10,25 +10,21 @@ const connectDB = require('./config/db')
 const app = express()
 require('dotenv').config()
 
-
 connectDB()
 
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
-app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use('/auth', require('./routes/authRouter'))
-app.use('/api/comment', require('./routes/commentRouter'))
+app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['RS256']})) // Remember: The token is in the header
 
 
+app.use(express.static(path.join(__dirname, "client", "build")))
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    // res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
-
-
 
 app.listen(process.env.PORT || 9000, () => {
     console.log('Server is running on local port 9000');

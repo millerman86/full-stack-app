@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 const config = require('config');
-const db = config.get('mongoURI');
+require('dotenv').config()
+
+let db;
+if (process.env.NODE_ENV === 'production') {
+	console.log(`Connecting in ${process.env.NODE_ENV}`);
+	db = process.env.MONGO_URI || ''
+}
+
+if (process.env.NODE_ENV === 'development') {
+	console.log(`Connecting in ${process.env.NODE_ENV}`);
+	db = 'mongodb://localhost:27017/full-stack-app'
+}
 
 const connectDB = async () => {
 	try {
