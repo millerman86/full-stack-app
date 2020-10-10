@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const connectDB = async () => {
 	try {
-		await mongoose.connect(db, {
+		await mongoose.connect('mongodb+srv://amren:amren@amcluster.2k38f.mongodb.net/test?retryWrites=true&w=majority', {
 			useNewUrlParser: true,
 			useCreateIndex: true,
 			useFindAndModify: false,
