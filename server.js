@@ -15,7 +15,7 @@ connectDB()
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
-
+//blahblahblah
 
 app.use('/auth', require('./routes/authRouter'))
 // app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['RS256']})) // Remember: The token is in the header

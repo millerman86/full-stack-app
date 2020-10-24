@@ -1,8 +1,19 @@
 import React from 'react';
 import './App.css';
-import {Route, Switch, Router as BrowserRouter} from 'react-router-dom'
 import axios from 'axios'
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom'
 import {useState, useEffect} from 'react'
+// import CreateNewProject from './pages/CreateNewProject'
+// import DashboardSplash from './pages/DashboardSplash'
+// import DemoUserLogin from './pages/DemoUserLogin'
+// import EditTicket from './pages/EditTicket'
+// import ManageUserRoles from './pages/ManageUserRoles'
+// import ProjectDetails from './pages/ProjectDetails'
+// import TicketDetails from './pages/TicketDetails'
+// import TicketHistoryAndAttachment from './pages/TicketHistoryAndAttachment'
+import YourTickets from './pages/YourTickets'
+import CreateNewProject from './pages/CreateNewProject';
+
 
 function App() {
 
@@ -11,26 +22,29 @@ function App() {
   useEffect(() => {
     axios.get('/api/comment')
       .then(res => {
-        console.log('here is your data', res.data);
-        setComments(res.data)
-        console.log(res.data)
+        setComments(() => [...res.data])
       })
       .catch(err => {
         console.log(err);
       })
-  }, [])
-
- 
+  }, [comments])
 
   return (
-    <div>
-      <Switch>
-        <Route
-          exact path="/" 
-          render={() => <div>amren miller is a programmer</div>}
-          />
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/yourtickets/:blah">
+            <YourTickets />
+          </Route>
+          <Route path="/createnewproject">
+            <CreateNewProject />
+          </Route>
+          <Route>
+            
+          </Route>
         </Switch>
-    </div>
+      </div>
+    </Router>
   );
 }
 
