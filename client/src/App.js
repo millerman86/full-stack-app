@@ -30,21 +30,21 @@ function App() {
   }, [comments])
 
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/yourtickets/:blah">
-            <YourTickets />
-          </Route>
-          <Route path="/createnewproject">
-            <CreateNewProject />
-          </Route>
-          <Route>
-            
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <main>
+      <Router>
+          <Switch>
+            <Route path="/yourtickets/:blah">
+              <YourTickets />
+            </Route>
+            <Route path="/createnewproject">
+              <CreateNewProject />
+            </Route>
+            <Route>
+              
+            </Route>
+          </Switch>
+      </Router>
+    </main>
   );
 }
 
