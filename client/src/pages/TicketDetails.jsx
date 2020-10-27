@@ -7,7 +7,7 @@ export default () => {
         <div className="ticket-details-and-comments-flex">
             <div className="left-column"> 
                 <header>
-                    <h1>Details for Ticket {ticketNumber}</h1>
+                    <h1>Details for Ticket {'ticket number'}</h1>
                     <a href="" className="back-to-list">Back to List</a> | <a href="" className="edit-ticket">Edit Ticket</a>
                 </header>
                 <div>

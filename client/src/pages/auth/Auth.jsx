@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../../context/UserProvider";
 import AuthForm from './AuthForm'
 import styled from 'styled-components'
-import Background from './greywave.jpeg'
 import { FaUser } from 'react-icons/fa'
 import axios from 'axios'
 
@@ -12,7 +11,7 @@ const initInputs = {username: "", password: ""}
 const AuthContainer = styled.div`
   background: #DAE0E6;
   min-height: 100vh;
-  background-image: url("${Background}");
+  background-image: url("");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

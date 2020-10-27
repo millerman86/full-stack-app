@@ -25,7 +25,6 @@ const userSchema = new Schema({
     }
 })
 
-////blah blah blahl blah 
 userSchema.pre('save', function(next) {
     const user = this 
 

@@ -70,7 +70,7 @@ export default function UserProvider(props) {
         ...userState,
         signup,
         login,
-        logout, 
+        logout
       }}
     >
       {props.children}
