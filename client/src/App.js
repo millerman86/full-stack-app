@@ -58,7 +58,7 @@ function App(props) {
               token={token}
             />
             <ProtectedRoute
-              path="/creatnewproject"
+              path="/createnewproject"
               component={CreateNewProject}
               redirectTo="/"
               token={token}

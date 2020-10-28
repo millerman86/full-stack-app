@@ -1,0 +1,99 @@
+h1, p {
+    margin: 0;
+}
+
+header {
+    background: orange;
+    position: relative; 
+    bottom: 20px;
+    color: white;
+    padding: 10px 10px;
+}
+
+.user-roles-flexlayout {
+    display: flex; 
+}
+
+.user-roles-flexlayout > div:first-child {
+    flex: 1;
+}
+
+.user-roles-flexlayout > div:last-child {
+    flex: 2;
+    padding: 0 80px 0 20px;
+}
+
+.manage-user-roles {
+    padding: 20px 20px;
+}
+
+.manage-user-roles h1 {
+    font-weight: normal;
+}
+
+.table-data-and-input {
+    display: flex; 
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    text-align: left;
+    
+}
+
+table thead th {
+    border-bottom: 1px solid black;
+}
+
+.personnel-section, .your-projects {
+    border: 1px solid black;
+    padding: 0 20px;
+    background: white;
+}
+
+
+.personnel-section header h2 {
+    font-weight: normal;
+}
+
+.table-pagination-section {
+    padding: 20px 0;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.table-pagination-section div span {
+    margin: 0 10px;
+}
+
+.select-user-select-role {
+    padding: 0 20px;
+}
+
+.show-number {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+.nothing-to-show {
+    text-align: center;
+}
+
+.page-wrap {
+    background: whitesmoke;
+    min-height: 100vh;
+}
+
+.your-projects {
+    margin: 30px;
+}
+
+.create-new-project-button-wrap {
+    padding: 20px;
+}
