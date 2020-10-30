@@ -38,7 +38,7 @@ export default () => {
     <div className="page-wrap">
         <div className="white">
             <div className="details-for-project">
-                <header>
+                <header className="table-header">
                     <h1>Details for Project #1</h1>
                     <a href="back-to-list">Back to List</a> | <a href="Edit">Edit</a>
                 </header>
@@ -55,7 +55,7 @@ export default () => {
             </div>
             <div className="assignedpersonnel-and-ticket-details">
                 <div className="assigned-personnel">
-                    <header>
+                    <header className="table-header">
                         <h1>Assigned Personnel</h1>
                         <p>Current Users on this Project</p>
                     </header>
@@ -86,7 +86,7 @@ export default () => {
                     </div>
                 </div>
                 <div className="tickets-for-this-project">
-                    <header>
+                    <header className="table-header">
                         <h1>Tickets for this Project</h1>
                         <p>Condensed Ticket Details</p>
                     </header>

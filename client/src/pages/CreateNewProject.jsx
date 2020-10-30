@@ -12,7 +12,7 @@ let projects = [
     },
     {
         name: 'myproject', 
-        description: 'this is a project', 
+        description: 'this is a project'
     }
 ]
 
@@ -23,7 +23,9 @@ export default () => {
             <button>Create New Project</button>
         </div>
         <div className="your-projects">
-            <header>Project Header</header>
+            <header className="table-header">
+                <h1>Project Header</h1>
+            </header>
 
             <div className="table-data-and-input">
                 <span>Show <span><span className="show-number">10</span> </span>entries</span>  

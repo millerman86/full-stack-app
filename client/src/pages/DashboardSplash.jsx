@@ -3,7 +3,7 @@ import React from 'react'
 export default () => {
     return (
     <div>
-        <header>l</header>
+        <header></header>
         <div className="dashboard-graphs">
             <div className="tickets-by-priority">
                 Graph goes here (bar chart)

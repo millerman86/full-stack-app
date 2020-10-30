@@ -4,7 +4,7 @@ export default function () {
     return (
     <div className="page-wrap">
         <div className="edit-ticket-background">
-            <header>
+            <header className="table-header">
                 <h1>Edit Ticket</h1>
                 <a href="" className="back-to-list">Change Ticket properties</a> 
             </header>

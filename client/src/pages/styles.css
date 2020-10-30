@@ -7,7 +7,28 @@ a {
     text-decoration: none;
 }
 
-header {
+header.app-header {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 15px 20px;
+}
+
+.global-search > * {
+    margin: 0 10px;
+}
+
+.global-search input {
+    padding-left: 10px;
+}
+
+main {
+    background: whitesmoke;
+    min-height: 100vh;
+}
+
+header.table-header {
     background: orange;
     position: relative; 
     bottom: 20px;
@@ -71,7 +92,6 @@ table thead th {
     margin: 10px;
     margin-top: 30px;
 }
-
 
 .personnel-section header h2 {
     font-weight: normal;
@@ -167,8 +187,6 @@ table thead th {
     flex: 1;
 }
 
-
-
 .backtolist-updateticket {
     display: flex; 
     justify-content: space-between;
@@ -176,7 +194,6 @@ table thead th {
 }
 
 .title-and-description-grid {
-    padding: 0 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -205,4 +222,10 @@ select.select-ticket-type {
 .edit-ticket-background {
     background: white;
     width: 70%;
+    padding: 0 30px;
 }
+
+.admin {
+    font-weight: 700;
+}
+

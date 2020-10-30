@@ -2,7 +2,6 @@ import React from 'react'
 
 
 
-
 let ticketHistory = [
     {
         name: 'myproject', 
@@ -41,13 +40,11 @@ export default () => {
         <div className="ticket-details-and-comments-flex">
             <div className="left-column"> 
 
-
                 <div className="details-for-ticket">
-                    <header>
+                    <header className="table-header">
                         <h1>Details for Ticket {'ticket number'}</h1>
                         <a href="" className="back-to-list">Back to List</a> | <a href="" className="edit-ticket">Edit Ticket</a>
                     </header>
-                    
                     
                     <div className="details-for-ticket-layout">
                         <div className="details-for-ticket-column1">
@@ -72,7 +69,6 @@ export default () => {
                                 </div>
                             </div>
                         </div>
-    
     
                         <div className="details-for-ticket-column2">
                             <div>
@@ -107,11 +103,7 @@ export default () => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
-
             </div>
             <div className="right-column">
                 <p className="add-a-comment">Add a Comment?</p>
@@ -119,7 +111,7 @@ export default () => {
                     <input type="text"/><button>Add</button>
                 </div>
                 <div className="ticket-comments">
-                    <header>
+                    <header className="table-header">
                         <h1>Ticket Comments</h1>
                         <a href="">All Comments for this Project</a>
                     </header>
@@ -152,18 +144,14 @@ export default () => {
 
                     
                 </div>
-
-               
             </div>
-
-            
         </div>
 
-        <hr/>
+        <hr />
 
         <div className="ticket-history-and-attachment-flex">
             <div className="ticket-history-and-attachment">
-                <header>
+                <header className="table-header">
                     <h1>Ticket History</h1>
                     <a href="">All History Information for this Ticket</a>
                 </header>
@@ -190,9 +178,9 @@ export default () => {
         </div> 
 
         <div className="ticket-history">
-                <header>
-                    <h1>Ticket History</h1>
-                    <a href="">All History Information for this Ticket</a>
+                <header className="table-header">
+                    <h1>Ticket Attachment</h1>
+                    <a href="">All Files Attached to this Ticket</a>
                 </header>
                 <div className="table-data-and-input">
                     <span>Show {10} entries</span> 
@@ -224,13 +212,7 @@ export default () => {
                     <div><span>Previous</span><span>1</span><span>Next</span></div>
                 </div>
             </div>
-           
-
-
         </div>
-
-          
-       
     </div>)
 }
 

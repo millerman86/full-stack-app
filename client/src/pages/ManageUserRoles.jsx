@@ -60,7 +60,7 @@ export default () => {
 
             <div>
                 <div className="personnel-section">
-                    <header>
+                    <header className="table-header">
                         <h2>Your personnel</h2>
                         <p>All the users in your database</p>
                     </header>

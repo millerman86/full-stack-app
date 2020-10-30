@@ -1,6 +1,13 @@
-import React, {useContext} from 'react';
 import './App.css';
 import axios from 'axios'
+
+import React, {
+  useContext
+} from 'react';
+
+import {
+  UserContext
+} from './context/UserProvider'
 
 import {
   Route, 
@@ -9,8 +16,10 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 
-import {useState, useEffect} from 'react'
-import {UserContext} from './context/UserProvider'
+import {
+  useState, useEffect
+} from 'react'
+
 import ProtectedRoute from './components/ProtectedRoute'
 
 import Auth from './pages/auth/Auth'
@@ -28,22 +37,18 @@ import YourTickets from './pages/YourTickets'
 
 function App(props) {
 
-  const [comments, setComments] = useState([])
   const {token, logout} = useContext(UserContext)
-
-  console.log(token);
-  useEffect(() => {
-    axios.get('/api/comment')
-      .then(res => {
-        setComments(() => [...res.data])
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }, [comments])
 
   return (
     <main>
+      <header className="app-header">
+          <div>Logged in as: <span className="admin">Admin</span></div>
+          <div className="global-search">
+            <input type="text" placeholder="Search" />
+            <span>NOTIFICATIONS<i /></span>
+            <span>USER ACTIONS<i /></span>
+          </div>
+      </header>
       <Router>
           <Switch>
             <Route 
