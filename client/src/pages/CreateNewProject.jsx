@@ -16,7 +16,6 @@ let projects = [
     }
 ]
 
-
 export default () => {
     return (
     <div className="page-wrap">
@@ -43,6 +42,7 @@ export default () => {
 
 
 function YourProjects(props) {
+    const {projects} = props
     return (
     <table>
         <thead>
@@ -53,7 +53,7 @@ function YourProjects(props) {
             </tr>
         </thead>
         <tbody>
-            {props.projects.map((project, i) => {
+            {projects.map((project, i) => {
                 return (
                     <tr key={i}>
                         <td className="project-name-data">{project.name}</td>

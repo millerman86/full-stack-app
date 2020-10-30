@@ -2,40 +2,59 @@ import React from 'react'
 
 export default function () {
     return (
-    <div>
-        <div>
-            <header></header>
-            <div className="title-and-description-flex">
-                <div className="title-column">
+    <div className="page-wrap">
+        <div className="edit-ticket-background">
+            <header>
+                <h1>Edit Ticket</h1>
+                <a href="" className="back-to-list">Change Ticket properties</a> 
+            </header>
+            <div className="title-and-description-grid">
+    
 
-                    <h2>Title</h2>
-                    <div className="title-text">Great Work</div>
-
+                <div>
+                    <h4>Title</h4>
+                    <p className="title-text">Great Work</p>
                     <hr/>
-
-                    <h3>PROJECT</h3>
-                    <select name="select-project-name" id=""></select>
-
-                    <h3>Ticket Priority</h3>
-                    <select name="select-ticket-priority" id=""></select>
-
-                    <h3>Ticket Type</h3>
-                    <select name="select-ticket-type" id=""></select>
                 </div>
-                <div className="description-column">
-                    
-                    <h2>Description</h2>
-                    <div className="description-text">Keep on Pluggin in the code, you're getting there</div>
 
+                <div>
+                    <h4>Description</h4>
+                    <p className="description-text">Keep on Pluggin in the code, you're getting there</p>
                     <hr/>
-
-                    <h3>Assigned Description</h3>
-                    <select name="select-developer" id=""></select>
-
-                    <h3>Ticket Status</h3>
-                    <select name="select-ticket-status" id=""></select>
                 </div>
+
+                <div>
+                    <h4>PROJECT</h4>
+                    <select className="select-project-name" id=""></select>
+                </div>
+
+                <div>
+                    <h4>Assigned Developer</h4>
+                    <select className="select-developer" id=""></select>
+                </div>
+
+                <div>
+                    <h4>Ticket Priority</h4>
+                    <select className="select-ticket-priority" id=""></select>
+                </div>
+
+                <div>
+                    <h4>Ticket Status</h4>
+                    <select className="select-ticket-status" id=""></select>
+                </div>
+
+                <div>
+                    <h4>Ticket Type</h4>
+                    <select className="select-ticket-type" id=""></select>
+                </div>
+
+
+            </div>
+            <div className="backtolist-updateticket">
+                <span><a href="back-to-list">Back to List</a></span>
+                <span><button>Update Ticket</button></span>
             </div>
         </div>
-    </div>)
+    </div>
+    )
 }

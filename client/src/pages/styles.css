@@ -103,6 +103,7 @@ table thead th {
 .page-wrap {
     background: whitesmoke;
     min-height: 100vh;
+    padding: 30px 0;
 }
 
 .your-projects {
@@ -164,4 +165,44 @@ table thead th {
 .add-a-comment-input input {
     margin-right: 20px;
     flex: 1;
+}
+
+
+
+.backtolist-updateticket {
+    display: flex; 
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+.title-and-description-grid {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title-and-description-grid > div {
+    padding: 0 20px;
+}
+
+.title-and-description-grid h4 {
+    font-weight: normal;
+}
+
+select.select-project-name, 
+select.select-developer, 
+select.select-ticket-priority, 
+select.select-ticket-status, 
+select.select-ticket-type {
+    width: 80%;
+}
+
+.description-text, 
+.title-text {
+    font-weight: 500;
+}
+
+.edit-ticket-background {
+    background: white;
+    width: 70%;
 }
