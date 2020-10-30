@@ -1,68 +1,105 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+﻿# First Full-Stack Application
 
-## Available Scripts
+![](readmeimages/Learn-Javascript-1.jpg)
 
-In the project directory, you can run:
+This is the last self-directed, larger-scale, full-stack application that you'll build in this course. Up to this point you've learned and practiced everything you need to know in order to build beautiful, data-driven web applications that can provide a real benefit to users. This will be a chance for you to continue to refine your skills, and possibly build something you could turn into a helpful tool for your friends and family, or possibly even a profitable business!
 
-### `yarn start`
+You will have this whole week to work on this project of your choosing.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Project Requirements
+This project needs to be a full-stack web application. As such, it needs to satisfy the following set of requirements:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* A passed-off proposal Explaining your app
+* Uses React on the front-end
+* Is a single-page application (SPA)
+* Is responsive
+* Is well organized, using Context and Axios where applicable/useful.
+* Uses Node.js/Express as the back-end server
+* Shows a good understanding of module patterns by separating components, containers, etc. into their own folders and files
+* Uses express routers
+* Uses MongoDB for the database and Mongoose for schema creation and the ODM (Object-Document Mapper)
+* Has user authentication using json web tokens, express-jwt, bcrypt, and dotenv.
+* You also won't necessarily be required to integrate with a third-party API, but you should know that it is one of the best ways to make a really interesting and useful application in a short amount of time.
 
-### `yarn test`
+### Proposal
+This part of the project is to help you narrow down your idea, clarify its parts and make it easier to start coding.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The requirements are as follows.
 
-### `yarn build`
+* Paragraph describing your app idea. What are you building? Who is it for?
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* An easily describable MVP. Remember you have a limited amount of time to develop this project. What is the minimum you can get done on this project to meet the requirements and get a product in someone's hand?
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* User Stories. What is a user going to do when they go to your site from the time they hit the landing page? What features do they need and which are optional?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Wireframe. What is each page going to look like? What will be the layout, color scheme, etc?
 
-### `yarn eject`
+* Mind Map. What is the structure of your backend and frontend app going to look like? What routes, models, components, actions, and reducers will you need? How will your data be organized?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Once you have these items, you need to meet with your instructor to pass off your proposal before you can start coding.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Passing Criteria: Project Demo to the class
+You'll present your finished project to the rest of the class and spend a couple minutes discussing in detail a difficulty (or two) you faced while developing the app and how you ended up solving that problem. The instructors/TAs will be making sure your project satisfied all the requirements outlined above while you are presenting.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Successful completion of this project passes off the following milestones of the skills tree:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Web Applications - Level 3
+* HTTP/APIs - Level 4,
+* Databases - Levels 3 & 4
 
-## Learn More
+Bug Tracker - I am building this project for myself and for others. It will be used to track my progress and also be able to 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+MVP - 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Requirements for MVP - Demo User Logins (4), Admin, Project Manager, Developer, Submitter, (with Have an Account? Sign in) below
 
-### Code Splitting
+Suggested Routes: login, dashboard, manageuserroles, newproject, projectdetails, ticketdetails, tickethistory
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+# demo_user_login 
+![](readmeimages/demo-user-logins.png)
+<br />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+# dashboard_splash
+![](readmeimages/dashboard-splash.png)
+<br />
+Tickets by priority
+<br />
+Tickets by type
+<br />
+Tickets by status
+<br />
+Tickets by developer 
+<br />
 
-### Making a Progressive Web App
+# manage_user_roles
+![](readmeimages/manage-user-roles.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+# create_new_project
+![](readmeimages/create-new-project.png)
 
-### Advanced Configuration
+# project_details
+![](readmeimages/project-details.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+# ticket_details
+![](readmeimages/ticket-details.png)
 
-### Deployment
+# ticket_history_and_attachment
+![](readmeimages/ticket-history-and-attachment.png)
++Showing [number] out of [number] files
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+# edit_ticket
+![](readmeimages/edit-ticket.png)
 
-### `yarn build` fails to minify
+# your_tickets
+![](readmeimages/your-tickets.png)
++Showing [number] to [number] of entries (filtered from 10 total entries)
+Show all tickets in system if you are an admin. If you are a developer, you would see the tickets just assigned to yourself. If you are a project manager, you are shown all the tickets on a project that you are assigned to.
+Ticket Status - New / Open / Resolved / Additional Info Required
+Submit for new roles
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Search for Users
+
+Roles - Admin
+
+Bug Tracker Ideas - Project, (Collection of Tickets, tickets are the issues, or defects, or feature requests inside the project)

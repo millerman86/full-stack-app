@@ -2,6 +2,11 @@ h1, p {
     margin: 0;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 header {
     background: orange;
     position: relative; 
@@ -51,10 +56,20 @@ table thead th {
     border-bottom: 1px solid black;
 }
 
-.personnel-section, .your-projects {
+.personnel-section, 
+.your-projects, 
+.details-for-project, 
+.assigned-personnel, 
+.tickets-for-this-project, 
+.details-for-ticket, 
+.ticket-comments, 
+.ticket-history, 
+.ticket-history-and-attachment {
     border: 1px solid black;
     padding: 0 20px;
     background: white;
+    margin: 10px;
+    margin-top: 30px;
 }
 
 
@@ -96,4 +111,57 @@ table thead th {
 
 .create-new-project-button-wrap {
     padding: 20px;
+}
+
+.name-and-description-flex {
+    display: flex; 
+}
+
+.name-and-description-flex > div {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.assignedpersonnel-and-ticket-details {
+    display: flex;
+}
+
+.assignedpersonnel-and-ticket-details > div {
+    flex: 1;
+}
+
+.white {
+    padding: 40px 0;
+}
+
+.ticket-details-and-comments-flex, 
+.ticket-history-and-attachment-flex {
+    display: flex;
+}
+
+.ticket-details-and-comments-flex > div {
+    flex: 1;
+}
+
+.ticket-history-and-attachment-flex > div {
+    flex: 1;
+}
+
+.details-for-ticket-layout {
+    display: flex;
+}
+
+.details-for-ticket-layout > div {
+    flex: 1;
+}
+
+.add-a-comment-input {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+}
+
+.add-a-comment-input input {
+    margin-right: 20px;
+    flex: 1;
 }

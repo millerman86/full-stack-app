@@ -2,7 +2,6 @@ import React from 'react'
 import {
     useRouteMatch
 } from 'react-router-dom'
-import tablestyles from './tablestyles.css'
 import Downshift from 'downshift'
 import './styles.css'
 

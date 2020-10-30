@@ -19,7 +19,7 @@ let projects = [
 
 export default () => {
     return (
-    <div class="page-wrap">
+    <div className="page-wrap">
         <div className="create-new-project-button-wrap">
             <button>Create New Project</button>
         </div>
