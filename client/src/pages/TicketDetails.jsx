@@ -3,35 +3,65 @@ import React from 'react'
 
 
 let ticketHistory = [
-    {
-        name: 'myproject', 
-        description: 'this is a project', 
+   {
+        property: 'property', 
+        oldValue: 'old value', 
+        newValue: 'new value', 
+        dateChanged: 'date changed'
+   }, 
+   {
+        property: 'property', 
+        oldValue: 'old value', 
+        newValue: 'new value', 
+        dateChanged: 'date changed'
     }, 
     {
-        name: 'myproject', 
-        description: 'this is a project', 
-    },
-    {
-        name: 'myproject', 
-        description: 'this is a project', 
-    }
+        property: 'property', 
+        oldValue: 'old value', 
+        newValue: 'new value', 
+        dateChanged: 'date changed'
+    }, 
 ]
 
 let ticketComments = [
     {
-        name: 'myproject', 
-        description: 'this is a project', 
+        commenter: 'amren miller', 
+        message: 'this is a message', 
+        created: 'today'
     }, 
     {
-        name: 'myproject', 
-        description: 'this is a project', 
-    },
+        commenter: 'amren miller', 
+        message: 'this is a message', 
+        created: 'today'
+    }, 
     {
-        name: 'myproject', 
-        description: 'this is a project', 
+        commenter: 'amren miller', 
+        message: 'this is a message', 
+        created: 'today'
     }
 ]
 
+
+let ticketAttachments = [
+    {
+        file: 'file', 
+        uploader: 'uploader', 
+        notes: 'notes', 
+        created: 'created'
+    }, 
+    {
+        file: 'file', 
+        uploader: 'uploader', 
+        notes: 'notes', 
+        created: 'created'
+    }, 
+    {
+        file: 'file', 
+        uploader: 'uploader', 
+        notes: 'notes', 
+        created: 'created'
+    }, 
+]
 
 export default () => {
     return (
@@ -119,22 +149,11 @@ export default () => {
                         <span>Show {10} entries</span> 
                         <input type="text"/>
                     </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th className="commenter">Commenter</th>
-                                <th className="message">Message</th>
-                                <th className="created">Created</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="commenter-data">blah</td>
-                                <td className="message-data">blah</td>
-                                <td className="created-data">blah</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    
+                   <TicketComments ticketComments={ticketComments} />
+
+
                     {!ticketHistory.length ? <div>Nothing to show</div> : null}
                     <span>{}</span>
                     <div className="table-data-and-input">
@@ -155,24 +174,10 @@ export default () => {
                     <h1>Ticket History</h1>
                     <a href="">All History Information for this Ticket</a>
                 </header>
-                <table>
-                    <thead>
-                        <tr>
-                            <th className="file">Property</th>
-                            <th className="uploader">Old Value</th>
-                            <th className="notes">New Value</th>
-                            <th className="created">Date Changed</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="file-data">AssignedToUserId</td>
-                            <td className="uploader-data">DemoD Dean</td>
-                            <td className="notes-data">DemoD Dev</td>
-                            <td className="created-data">11/13/2019 7:50:12pm</td>
-                        </tr>
-                    </tbody>
-                </table>
+                
+                <TicketHistory ticketHistory={ticketHistory} />
+
+
                 {!ticketComments.length ? <div>Nothing to show</div> : null}
 
                 <div className="table-pagination-section">
@@ -190,25 +195,9 @@ export default () => {
                     <span>Show {10} entries</span> 
                     <input type="text"/>
                 </div>
-    
-                <table>
-                    <thead>
-                        <tr>
-                            <th className="property">File</th>
-                            <th className="old-value">Uploader</th>
-                            <th className="new-value">Notes</th>
-                            <th className="date-changed">Created</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="property-data">blah</td>
-                            <td className="old-value-data">blah</td>
-                            <td className="new-value-data">blah</td>
-                            <td className="date-changed-data">blah</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <TicketAttachments ticketAttachments={ticketAttachments} />
+               
                 {!ticketHistory.length ? <div>Nothing to show</div> : null}
     
                 <div className="table-pagination-section">
@@ -222,3 +211,91 @@ export default () => {
 
 
 
+function TicketComments(props) {
+    let {ticketComments} = props
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th className="commenter">Commenter</th>
+                    <th className="message">Message</th>
+                    <th className="created">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {ticketComments.map((ticket, i) => {
+                    return (
+                        <tr key={i}>
+                            <td className="commenter-data">{ticket.commenter}</td>
+                            <td className="message-data">{ticket.message}</td>
+                            <td className="created-data">{ticket.created}</td>
+                        </tr>
+                    )
+                })}
+                
+            </tbody>
+        </table>
+    )
+}
+
+
+function TicketAttachments(props) {
+    let {ticketAttachments} = props
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th className="property">File</th>
+                    <th className="old-value">Uploader</th>
+                    <th className="new-value">Notes</th>
+                    <th className="date-changed">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {ticketAttachments.map((ticket, i) => {
+                    return (
+                        <tr key={i}>
+                            <td className="property-data">{ticket.file}</td>
+                            <td className="old-value-data">{ticket.uploader}</td>
+                            <td className="new-value-data">{ticket.notes}</td>
+                            <td className="date-changed-data">{ticket.created}</td>
+                        </tr>
+                    )
+                })}
+            </tbody>
+        </table>
+    )
+}
+
+
+function TicketHistory(props) {
+    let {ticketHistory} = props
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th className="file">Property</th>
+                    <th className="uploader">Old Value</th>
+                    <th className="notes">New Value</th>
+                    <th className="created">Date Changed</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {ticketHistory.map((ticket, i) => {
+                    return (
+                        <tr key={i}>
+                            <td className="file-data">{ticket.property}</td>
+                            <td className="uploader-data">{ticket.oldValue}</td>
+                            <td className="notes-data">{ticket.newValue}</td>
+                            <td className="created-data">{ticket.dateChanged}</td>
+                        </tr>
+                    )
+                })}
+
+            </tbody>
+        </table>
+    )
+}
