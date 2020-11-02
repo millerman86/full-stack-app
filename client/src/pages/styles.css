@@ -85,7 +85,8 @@ table thead th {
 .details-for-ticket, 
 .ticket-comments, 
 .ticket-history, 
-.ticket-history-and-attachment {
+.ticket-history-and-attachment, 
+.your-tickets {
     border: 1px solid black;
     padding: 0 20px;
     background: white;
@@ -221,7 +222,8 @@ select.select-ticket-type {
 
 .edit-ticket-background {
     background: white;
-    width: 70%;
+    width: 60%;
+    border: 1px solid black;
     padding: 0 30px;
 }
 

@@ -60,7 +60,16 @@ function YourProjects(props) {
                     <tr key={i}>
                         <td className="project-name-data">{project.name}</td>
                         <td className="project-description-data">{project.description}</td>
-                        <td className="manage-and-details-links"><a href="">Manage</a>&nbsp;<a href="">Details</a></td>
+                        <td className="manage-and-details-links">
+                            <ul>
+                                <li>
+                                    <a href="">Manage Users</a>
+                                </li>
+                                <li>
+                                    <a href="">Details</a>
+                                </li>
+                            </ul>
+                        </td>
                     </tr>
                 )
             })}

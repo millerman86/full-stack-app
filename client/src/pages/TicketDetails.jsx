@@ -158,23 +158,27 @@ export default () => {
                 <table>
                     <thead>
                         <tr>
-                            <th className="file">File</th>
-                            <th className="uploader">Uploader</th>
-                            <th className="notes">Notes</th>
-                            <th className="created">Created</th>
+                            <th className="file">Property</th>
+                            <th className="uploader">Old Value</th>
+                            <th className="notes">New Value</th>
+                            <th className="created">Date Changed</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td className="file-data">blah</td>
-                            <td className="uploader-data">blah</td>
-                            <td className="notes-data">blah</td>
-                            <td className="created-data">blah</td>
+                            <td className="file-data">AssignedToUserId</td>
+                            <td className="uploader-data">DemoD Dean</td>
+                            <td className="notes-data">DemoD Dev</td>
+                            <td className="created-data">11/13/2019 7:50:12pm</td>
                         </tr>
                     </tbody>
                 </table>
                 {!ticketComments.length ? <div>Nothing to show</div> : null}
 
+                <div className="table-pagination-section">
+                    <div>Showing 1 to 3 of 3 entries</div>
+                    <div><span>Previous</span><span>1</span><span>Next</span></div>
+                </div>
         </div> 
 
         <div className="ticket-history">
@@ -190,10 +194,10 @@ export default () => {
                 <table>
                     <thead>
                         <tr>
-                            <th className="property">Property</th>
-                            <th className="old-value">Old Value</th>
-                            <th className="new-value">New Value</th>
-                            <th className="date-changed">Date Changed</th>
+                            <th className="property">File</th>
+                            <th className="old-value">Uploader</th>
+                            <th className="new-value">Notes</th>
+                            <th className="date-changed">Created</th>
                         </tr>
                     </thead>
                     <tbody>

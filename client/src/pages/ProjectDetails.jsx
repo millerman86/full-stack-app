@@ -97,16 +97,24 @@ export default () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>User Name</th>
-                                <th>E-mail</th>
-                                <th>Role</th>
+                                <th>Title</th>
+                                <th>Submitter</th>
+                                <th>Developer</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th>empty</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
+                                <td>Aesthetics Please</td>
+                                <td>Amren Miller</td>
+                                <td>DemoD Dev</td>
+                                <td>Open</td>
+                                <td>Today(11/2/2020)</td>
+                                <td>
+                                    <a href="">More Details</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
