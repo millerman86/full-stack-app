@@ -16,7 +16,7 @@ export default ()  => {
 		return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
 	}
 
-    const barChartOptions = {
+    const barChartOptionsByPriority = {
         // animationEnabled: true,
         theme: "light2",
         title:{
@@ -27,20 +27,44 @@ export default ()  => {
             reversed: true,
         },
         axisY: {
-            title: "Monthly Active Users",
+            // title: "Number of Tickets by Priority",
             includeZero: true,
             labelFormatter: addSymbols, 
         },
         data: [{
             type: "column",
             dataPoints: [
-                { y:  2200000000, label: "Facebook" },
-                { y:  1800000000, label: "YouTube" },
-                { y:  800000000, label: "Instagram" },
-                { y:  563000000, label: "Qzone" },
-                { y:  376000000, label: "Weibo" },
-                { y:  336000000, label: "Twitter" },
-                { y:  330000000, label: "Reddit" }
+                { y:  0, label: "High" },
+                { y:  3, label: "Medium" },
+                { y:  2, label: "Low" },
+                { y:  4, label: "None" },
+            ]
+        }]
+    }
+
+    const barChartOptionsByStatus = {
+        // animationEnabled: true,
+        theme: "light2",
+        title:{
+            text: "N/A"
+        },
+        axisX: {
+            title: "Social Network",
+            reversed: true,
+        },
+        axisY: {
+            // title: "Number of Tickets by Status",
+            includeZero: true,
+            labelFormatter: addSymbols, 
+        },
+        data: [{
+            type: "column",
+            dataPoints: [
+                { y:  0, label: "Additional Info Required" },
+                { y:  0, label: "Reactivated" },
+                { y:  3, label: "In Progress" },
+                { y:  2, label: "Open" },
+                { y:  4, label: "New" },
             ]
         }]
     }
@@ -95,39 +119,26 @@ export default ()  => {
         }]
     }
 
-
-  
-
     return (
-    <div className="dashboard-splash">
-
-     
+    <div className="dashboard-home">
 
         <div className="pie-grid">
 
-
-
             <div>
-                <CanvasJSChart options={barChartOptions} />
+                <CanvasJSChart options={barChartOptionsByPriority} />
                 <h2 className="tickets-by">Tickets By Priority</h2>
             </div>
             <div>
                 <CanvasJSChart options={bugsErrorsPieChartOptions} />
                 <h2 className="tickets-by">Tickets by Type</h2>
             </div>
-            
-
 
         </div>
 
-   
-
         <div className="pie-grid">
 
-
-
             <div>
-                <CanvasJSChart options={barChartOptions} />
+                <CanvasJSChart options={barChartOptionsByStatus} />
                 <h2 className="tickets-by">Tickets by Status</h2>
             </div>
             <div>
@@ -135,9 +146,8 @@ export default ()  => {
                 <h2 className="tickets-by">Tickets by Developer</h2>
             </div>
 
-
-
         </div>
+        
     </div>)
 }
 

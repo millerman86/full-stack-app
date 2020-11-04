@@ -26,14 +26,22 @@ import Auth from './pages/auth/Auth'
 
 import DemoUserLogin from './pages/DemoUserLogin'
 import CreateNewProject from './pages/CreateNewProject'
-import DashboardSplash from './pages/DashboardSplash'
+import DashboardHome from './pages/DashboardHome'
 import EditTicket from './pages/EditTicket'
 import ManageUserRoles from './pages/ManageUserRoles'
 import ProjectDetails from './pages/ProjectDetails'
 import TicketDetails from './pages/TicketDetails'
 import TicketHistoryAndAttachment from './pages/TicketHistoryAndAttachment'
 import YourTickets from './pages/YourTickets'
-import { FaUser, FaBell, FaUsers, FaUserTag, FaLayerGroup, FaTicketAlt, FaHome } from 'react-icons/fa'
+import { 
+  FaUser, 
+  FaBell, 
+  FaUsers, 
+  FaUserTag, 
+  FaLayerGroup, 
+  FaTicketAlt, 
+  FaHome 
+} from 'react-icons/fa'
 
 
 function App(props) {
@@ -55,34 +63,34 @@ function App(props) {
             <div className="welcome-user">
                 <div>
                   <p>Welcome</p>
-                  <p>{'amren'}</p>
+                  <p>{'Amren'}</p>
                 </div>
             </div>
           </div>
           
-          <div className="sidebar-navlink">
+          <div className="sidebar-navlink selected">
             <span><FaHome /></span>
-            <span href="#">Dashboard Home</span>
+            <span href="#"><a href="">Dashboard Home</a></span>
           </div>
           <div className="sidebar-navlink">
             <span><FaUserTag /></span>
-            <span href="#">Manage Role Assignment</span>
+            <span href="#"><a href="">Manage Role Assignment</a></span>
           </div>
           <div className="sidebar-navlink">
             <span><FaUsers /></span>
-            <span href="#">Manage Project Users</span>
+            <span href="#"><a href="">Manage Project Users</a></span>
           </div>
           <div className="sidebar-navlink">
             <span><FaLayerGroup /></span>
-            <span href="#">My Projects</span>
+            <span href="#"><a href="">My Projects</a></span>
           </div>
           <div className="sidebar-navlink">
             <span><FaTicketAlt /></span>
-            <span href="#">My Tickets</span>
+            <span href="#"><a href="">My Tickets</a></span>
           </div>
           <div className="sidebar-navlink">
             <span><FaUser /></span>
-            <span href="#">My User Profile</span>
+            <span href="#"><a href="">My User Profile</a></span>
           </div>
           
       </div>
@@ -123,8 +131,8 @@ function App(props) {
                   token={token}
                 />
                 <ProtectedRoute
-                  path="/dashboardsplash"
-                  component={DashboardSplash}
+                  path="/dashboardhome"
+                  component={DashboardHome}
                   redirectTo="/"
                   token={token}
                 />
