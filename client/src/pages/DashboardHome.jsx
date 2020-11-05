@@ -1,3 +1,4 @@
+import { PromiseProvider } from 'mongoose'
 import React, {Component} from 'react'
 import CanvasJSReact from '../canvasjs.react'
 let CanvasJS = CanvasJSReact.CanvasJS
@@ -5,7 +6,7 @@ let CanvasJSChart = CanvasJSReact.CanvasJSChart
 
 
 
-export default ()  => {
+export default (props)  => {
 
     function addSymbols(e){
 		var suffixes = ["", "K", "M", "B"];

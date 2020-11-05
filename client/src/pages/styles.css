@@ -31,7 +31,7 @@ main {
 }
 
 main .sidebar {
-    width: 260px;
+    min-width: 250px;
 }
 
 main .main-content {
@@ -135,6 +135,7 @@ table thead th {
     background: whitesmoke;
     min-height: 100vh;
     padding: 30px 0;
+    min-width: 1000px;
 }
 
 .your-projects {
@@ -296,9 +297,7 @@ select.select-ticket-type {
   
 /* The sidebar links */
 .sidebar a {
-    padding: 8px 8px 8px 5px;
     text-decoration: none;
-    color: #818181;
     transition: 0.3s;
 }
 
@@ -326,4 +325,8 @@ select.select-ticket-type {
 
 .sidebar-navlink span {
     margin: 5px;
+}
+
+.pie-grid {
+    min-width: 900px;
 }

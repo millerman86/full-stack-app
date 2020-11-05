@@ -13,7 +13,9 @@ import {
   Route, 
   Switch, 
   Redirect,
-  BrowserRouter as Router
+  BrowserRouter as Router, 
+  useHistory, 
+  useRouteMatch
 } from 'react-router-dom'
 
 import {
@@ -33,6 +35,7 @@ import ProjectDetails from './pages/ProjectDetails'
 import TicketDetails from './pages/TicketDetails'
 import TicketHistoryAndAttachment from './pages/TicketHistoryAndAttachment'
 import YourTickets from './pages/YourTickets'
+import YourProjects from './pages/YourProjects'
 import { 
   FaUser, 
   FaBell, 
@@ -48,6 +51,8 @@ function App(props) {
 
   const {token, logout} = useContext(UserContext)
 
+  const location = window.location.pathname
+  console.log(location)
   return (
     <main>
 
@@ -68,30 +73,43 @@ function App(props) {
             </div>
           </div>
           
-          <div className="sidebar-navlink selected">
-            <span><FaHome /></span>
-            <span href="#"><a href="">Dashboard Home</a></span>
-          </div>
-          <div className="sidebar-navlink">
-            <span><FaUserTag /></span>
-            <span href="#"><a href="">Manage Role Assignment</a></span>
-          </div>
-          <div className="sidebar-navlink">
-            <span><FaUsers /></span>
-            <span href="#"><a href="">Manage Project Users</a></span>
-          </div>
-          <div className="sidebar-navlink">
-            <span><FaLayerGroup /></span>
-            <span href="#"><a href="">My Projects</a></span>
-          </div>
-          <div className="sidebar-navlink">
-            <span><FaTicketAlt /></span>
-            <span href="#"><a href="">My Tickets</a></span>
-          </div>
-          <div className="sidebar-navlink">
-            <span><FaUser /></span>
+          <a href="/dashboardhome">
+            <div className={`sidebar-navlink ${location === '/dashboardhome' ? 'selected' : ''}`}>
+                <span><FaHome /></span>
+                <span href="#">Dashboard Home</span>
+            </div>
+          </a>
+          <a href="/manageuserroles">
+            <div className={`sidebar-navlink ${location === "/manageuserroles" ? 'selected' : ''}`}>
+                <span><FaUserTag /></span>
+                <span href="#">Manage Role Assignment</span>
+            </div>
+          </a>
+          {/* DON'T NEED THIS FOR NOW */}
+          {/* <div className={`sidebar-navlink ${location === '/manageuserroles' ? '' : ''}`}>
+            <a href="/manageuserroles">
+              <span><FaUsers /></span>
+              <span href="#">Manage Project Users</span>
+            </a>
+          </div> */}
+          <a href="/yourprojects">
+            <div className={`sidebar-navlink ${location === '/yourprojects' ? 'selected' : ''}`}>
+                <span><FaLayerGroup /></span>
+                <span href="#">My Projects</span>
+            </div>
+          </a>
+          {/* DON'T NEED THIS FOR NOW */}
+          <a href="/yourtickets">
+            <div className={`sidebar-navlink ${location === '/yourtickets' ? 'selected' : ''}`}>
+                <span><FaTicketAlt /></span>
+                <span href="#">My Tickets</span>
+            </div>
+          </a>
+          {/* DON'T NEED THIS FOR NOW, I DON'T THINK */}
+          {/* <div className="sidebar-navlink">
+            <span><a href=""><FaUser /></a></span>
             <span href="#"><a href="">My User Profile</a></span>
-          </div>
+          </div> */}
           
       </div>
       
@@ -104,7 +122,7 @@ function App(props) {
               </div>
               <div className="global-search">
                 <input type="text" placeholder="Search" />
-                <span><FaHome /></span>
+                <span><a href="/dashboardhome"><FaHome /></a></span>
                 <span>NOTIFICATIONS <FaBell /></span>
                 <span>USER ACTIONS <FaUser /></span>
               </div>
@@ -115,7 +133,7 @@ function App(props) {
               <Switch>
                 <Route 
                   exact path="/" 
-                  render={() => (token ? <Redirect to="/dashboardsplash" /> : <Auth />)}
+                  render={() => (token ? <Redirect to="/dashboardhome" /> : <Auth />)}
                 />
                 <ProtectedRoute
                   // THIS MIGHT BE '/'
@@ -169,6 +187,12 @@ function App(props) {
                 <ProtectedRoute
                   path="/yourtickets"
                   component={YourTickets}
+                  redirectTo="/"
+                  token={token}
+                />
+                <ProtectedRoute
+                  path="/yourprojects"
+                  component={YourProjects}
                   redirectTo="/"
                   token={token}
                 />

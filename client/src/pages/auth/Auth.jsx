@@ -9,7 +9,6 @@ const initInputs = {username: "", password: ""}
 
 
 const AuthContainer = styled.div`
-  background: #DAE0E6;
   min-height: 100vh;
   background-image: url("");
   background-repeat: no-repeat;
