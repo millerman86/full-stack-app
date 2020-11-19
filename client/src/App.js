@@ -84,7 +84,7 @@ function App(props) {
                 <span><FaUserTag /></span>
                 <span href="#">Manage Role Assignment</span>
             </div>
-          </a>
+          </a>  
           {/* DON'T NEED THIS FOR NOW */}
           {/* <div className={`sidebar-navlink ${location === '/manageuserroles' ? '' : ''}`}>
             <a href="/manageuserroles">
