@@ -7,6 +7,7 @@ const path = require('path')
 const connectDB = require('./config/db')
 
 
+
 const app = express()
 require('dotenv').config()
 
@@ -15,11 +16,20 @@ connectDB()
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
-//blahblahblah
 
 app.use('/auth', require('./routes/authRouter'))
-// app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['RS256']})) // Remember: The token is in the header
-app.use('/api/comment', require('./routes/commentRouter'))
+app.use('/api', expressjwt({secret: process.env.SECRET, algorithms: ['RS256']})) // Remember: The token is in the header
+
+// Add any routes to models in this section, using the /api prefix
+
+
+app.use((err, req, res, next) => {
+    console.log(err);
+    if (err.name === 'UnauthorizedError') {
+        res.status(err.status)
+    }
+    return res.send({errMsg: err.message})
+})
 
 
 app.use(express.static(path.join(__dirname, "client", "build")))

@@ -8,20 +8,20 @@ import './styles.css'
 
 const userRoles = [
     {
-        username: 'amren', 
-        email: 'amrenmiller@gmail.com', 
+        username: 'amren',
+        email: 'amrenmiller@gmail.com',
         role: 'admin'
-    }, 
+    },
     {
-        username: 'amren', 
-        email: 'amrenmiller@gmail.com', 
+        username: 'amren',
+        email: 'amrenmiller@gmail.com',
         role: 'admin'
-    }, 
+    },
     {
-        username: 'amren', 
-        email: 'amrenmiller@gmail.com', 
+        username: 'amren',
+        email: 'amrenmiller@gmail.com',
         role: 'admin'
-    }, 
+    },
 ]
 
 
@@ -34,7 +34,7 @@ export default () => {
         </div>
         <div className="user-roles-flexlayout">
             <div className="select-user-select-role">
-                <p>Select 1 or more Users</p> 
+                <p>Select 1 or more Users</p>
 
 
                 <Downshift>
@@ -66,12 +66,12 @@ export default () => {
                         <p>All the users in your database</p>
                     </header>
                     <div className="table-data-and-input">
-                        <span>Show <span><span className="show-number">10</span> </span>entries</span>  
+                        <span>Show <span><span className="show-number">10</span> </span>entries</span>
                         <input type="text"/>
                     </div>
-    
+
                     <UserRoles userRoles={userRoles} />
-    
+
                     {!userRoles.length ? (<div className="nothing-to-show">Nothing to show</div>) : null}
                     <div className="table-pagination-section">
                         <div>Showing 1 to 10 of 13 entries</div>
@@ -85,7 +85,7 @@ export default () => {
 
 
 function UserRoles(props) {
-    return ( 
+    return (
     <table>
         <thead>
             <tr>

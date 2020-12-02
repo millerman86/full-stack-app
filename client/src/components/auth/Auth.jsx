@@ -109,9 +109,10 @@ export default () => {
       signup(inputs)
   }
 
-  function handleLogin(e) {
+  function handleLogin(e, username, password) {
       e.preventDefault()
-      login(inputs)
+      console.log(username, password);
+      login(username, password)
   }
 
   return (
@@ -121,7 +122,12 @@ export default () => {
         <div className="grid2x2">
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser className="fa-user">
+                    <FaUser 
+                      className="fa-user" 
+                      onClick={() => {
+                        handleLogin('admin', 'admin')
+
+                    }}>
 
                     </FaUser>
                     <p>Admin</p>
@@ -129,15 +135,25 @@ export default () => {
             </div>
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser className="fa-user">
+                    <FaUser 
+                      className="fa-user"
+                      onClick={() => {
+                        handleLogin('projectmanager', 'projectmanager')
 
+                    }}>
+                     
                     </FaUser>
                     <p>Project Manager</p>
                 </div>
             </div>
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser className="fa-user">
+                    <FaUser 
+                      className="fa-user"
+                      onClick={() => {
+                        handleLogin('developer', 'developer')
+
+                    }}>
 
                     </FaUser>
                     <p>Developer</p>
@@ -145,7 +161,12 @@ export default () => {
             </div>
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser className="fa-user">
+                    <FaUser 
+                      className="fa-user"
+                      onClick={() => {
+                        handleLogin('submitter', 'submitter')
+
+                    }}>
 
                     </FaUser>
                     <p>Submitter</p>

@@ -1,4 +1,0 @@
-"scripts": {
-    "start": "set NODE_ENV=development&& nodemon index.js", 
-    "start-prod": "set NODE_ENV=production&& nodemon index.js"
-}

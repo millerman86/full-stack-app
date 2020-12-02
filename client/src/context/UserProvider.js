@@ -55,11 +55,11 @@ export default function UserProvider(props) {
       localStorage.removeItem('token')
       localStorage.removeItem('user')
       setUserState({
-          user: {}, 
-          token: '', 
+          user: {},
+          token: '',
       })
   }
-  
+
   useEffect(() => {
 
   }, [])

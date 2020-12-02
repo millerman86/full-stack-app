@@ -10,11 +10,11 @@ import {
 } from './context/UserProvider'
 
 import {
-  Route, 
-  Switch, 
+  Route,
+  Switch,
   Redirect,
-  BrowserRouter as Router, 
-  useHistory, 
+  BrowserRouter as Router,
+  useHistory,
   useRouteMatch
 } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ import {
 
 import ProtectedRoute from './components/ProtectedRoute'
 
-import Auth from './pages/auth/Auth'
+import Auth from './components/auth/Auth'
 
 import DemoUserLogin from './pages/DemoUserLogin'
 import CreateNewProject from './pages/CreateNewProject'
@@ -36,15 +36,16 @@ import TicketDetails from './pages/TicketDetails'
 import TicketHistoryAndAttachment from './pages/TicketHistoryAndAttachment'
 import YourTickets from './pages/YourTickets'
 import YourProjects from './pages/YourProjects'
-import { 
-  FaUser, 
-  FaBell, 
-  FaUsers, 
-  FaUserTag, 
-  FaLayerGroup, 
-  FaTicketAlt, 
-  FaHome 
+import {
+  FaUser,
+  FaBell,
+  FaUsers,
+  FaUserTag,
+  FaLayerGroup,
+  FaTicketAlt,
+  FaHome
 } from 'react-icons/fa'
+
 
 
 function App(props) {
@@ -52,27 +53,26 @@ function App(props) {
   const {token, logout} = useContext(UserContext)
 
   const location = window.location.pathname
-  console.log(location)
   return (
     <main>
 
-      
+
       <div id="mySidebar" className="sidebar">
-              
+
           <div className="sidebar-flex">
             <div>
               <FaUser className="fa-user">
-    
+
               </FaUser>
             </div>
             <div className="welcome-user">
                 <div>
-                  <p>Welcome</p>
-                  <p>{'Amren'}</p>
+                  <p>welcome</p>
+                  <p>{'amren'}</p>
                 </div>
             </div>
           </div>
-          
+
           <a href="/dashboardhome">
             <div className={`sidebar-navlink ${location === '/dashboardhome' ? 'selected' : ''}`}>
                 <span><FaHome /></span>
@@ -84,7 +84,7 @@ function App(props) {
                 <span><FaUserTag /></span>
                 <span href="#">Manage Role Assignment</span>
             </div>
-          </a>  
+          </a>
           {/* DON'T NEED THIS FOR NOW */}
           {/* <div className={`sidebar-navlink ${location === '/manageuserroles' ? '' : ''}`}>
             <a href="/manageuserroles">
@@ -110,10 +110,10 @@ function App(props) {
             <span><a href=""><FaUser /></a></span>
             <span href="#"><a href="">My User Profile</a></span>
           </div> */}
-          
+
       </div>
-      
-      
+
+
       <div className="main-content">
 
           <header className="app-header">
@@ -131,8 +131,8 @@ function App(props) {
 
             <Router>
               <Switch>
-                <Route 
-                  exact path="/" 
+                <Route
+                  exact path="/"
                   render={() => (token ? <Redirect to="/dashboardhome" /> : <Auth />)}
                 />
                 <ProtectedRoute
@@ -198,12 +198,12 @@ function App(props) {
                 />
               </Switch>
           </Router>
-          
+
           </div>
-     
+
       </div>
-          
-      
+
+
     </main>
   );
 }
