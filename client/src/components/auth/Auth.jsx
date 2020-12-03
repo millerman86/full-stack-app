@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../../context/UserProvider";
 import AuthForm from './AuthForm'
 import styled from 'styled-components'
-import { FaUser } from 'react-icons/fa'
+import { FaUser, FaBug } from 'react-icons/fa'
 import axios from 'axios'
 
 const initInputs = {username: "", password: ""}
@@ -39,7 +39,7 @@ const AuthContainer = styled.div`
     display: flex;
     flex-direction: column;
   }
-  
+
   p {
     text-align: center;
   }
@@ -66,7 +66,7 @@ const AuthContainer = styled.div`
   }
 
   .grid2x2 .user-container {
-    flex-basis: 50%;  
+    flex-basis: 50%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -117,13 +117,14 @@ export default () => {
 
   return (
     <AuthContainer>
+
       <div className="form-container">
-        <h1>Demo User Login</h1>
+        <h1><FaBug />Demo User Login</h1>
         <div className="grid2x2">
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser 
-                      className="fa-user" 
+                    <FaUser
+                      className="fa-user"
                       onClick={() => {
                         handleLogin('admin', 'admin')
 
@@ -135,20 +136,20 @@ export default () => {
             </div>
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser 
+                    <FaUser
                       className="fa-user"
                       onClick={() => {
                         handleLogin('projectmanager', 'projectmanager')
 
                     }}>
-                     
+
                     </FaUser>
                     <p>Project Manager</p>
                 </div>
             </div>
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser 
+                    <FaUser
                       className="fa-user"
                       onClick={() => {
                         handleLogin('developer', 'developer')
@@ -161,7 +162,7 @@ export default () => {
             </div>
             <div className="user-container">
                 <div className="user-flex">
-                    <FaUser 
+                    <FaUser
                       className="fa-user"
                       onClick={() => {
                         handleLogin('submitter', 'submitter')
@@ -177,9 +178,10 @@ export default () => {
             <p className="sign-in">Have an account? Sign in!</p>
         </div>
 
-        {/* {!toggle ? 
+
+        {/* {!toggle ?
           <>
-            <AuthForm 
+            <AuthForm
               handleChange={handleChange}
               handleSubmit={handleSignup}
               inputs={inputs}
@@ -189,9 +191,9 @@ export default () => {
               <span onClick={() => setToggle(prev => !prev)}>Already a member?</span>
             </div>
           </>
-          : 
-            <> 
-              <AuthForm 
+          :
+            <>
+              <AuthForm
                 handleChange={handleChange}
                 handleSubmit={handleLogin}
                 inputs={inputs}

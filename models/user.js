@@ -1,34 +1,41 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema 
+const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
-
-
 
 const userSchema = new Schema({
     username: {
-        type: String, 
-        required: true, 
-        lowercase: true, 
+        type: String,
+        required: true,
+        lowercase: true,
         unique: true
-    }, 
+    },
     password: {
-        type: String, 
+        type: String,
         required: true
-    }, 
+    },
+    email: {
+      type: string,
+      required: true
+    },
+    role: {
+      type: string,
+      required: true
+    },
     memberSince: {
-        type: Date, 
+        type: Date,
         default: Date.now
-    }, 
+    },
     isAdmin: {
-        type: Boolean, 
+        type: Boolean,
         default: false
-    }
+    },
+
 })
 
 userSchema.pre('save', function(next) {
-    const user = this 
+    const user = this
 
-    if (!user.isModified('password')) return next() 
+    if (!user.isModified('password')) return next()
     bcrypt.hash(user.password, 10, (err, hash) => {
         if (err) return next(err)
         user.password = hash
@@ -37,7 +44,7 @@ userSchema.pre('save', function(next) {
 })
 
 userSchema.methods.checkPassword = function(passwordAttempt, callback) {
-    bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => { 
+    bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
         if (err) return callback(err)
         return callback(null, isMatch)
     })
