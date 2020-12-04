@@ -17,5 +17,5 @@ const projectSchema = new Schema({
   ticketsforproject: {
     type: Array,
     default: []
-  }
+  },
 })

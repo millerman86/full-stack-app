@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import UserProvider from './context/UserProvider'
+import './reset.local.css';
+import './index.css';
+
 
 ReactDOM.render(
   <UserProvider>
     <App />
-  </UserProvider>, 
+  </UserProvider>,
 document.getElementById('root')
 );
 
