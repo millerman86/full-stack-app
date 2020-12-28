@@ -32,7 +32,7 @@ const ticketSchema = new Schema({
   },
   tickettype: { // other commens, bugs/errors
     type: String,
-    required:
+    required: false
   },
 
 

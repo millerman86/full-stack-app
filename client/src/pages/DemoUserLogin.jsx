@@ -2,13 +2,9 @@ import React from 'react'
 
 export default function () {
     return (
-    <div>
-      <html>
-        <span>
-          
+        <div>
+            <html>
 
-
-        </span>
-      </html>
-    </div>)
+            </html>
+        </div>)
 }
