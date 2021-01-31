@@ -1,9 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../context/UserProvider";
-import AuthForm from './AuthForm'
 import styled from 'styled-components'
 import { FaUser, FaBug } from 'react-icons/fa'
-import axios from 'axios'
 
 const initInputs = {username: "", password: ""}
 

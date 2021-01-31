@@ -1,8 +1,4 @@
 import React, { useState } from 'react'
-import {
-    useRouteMatch
-} from 'react-router-dom'
-import Downshift from 'downshift'
 import { matchSorter } from 'match-sorter'
 import ReactPaginate from 'react-paginate'
 
@@ -70,10 +66,37 @@ const userRoles = [
     },
 ]
 
+
+const roles = ['admin', 'other']
+
+
+function getUsers() {
+    var el = document.getElementsByTagName('select')[0];
+    console.log('el', el);
+    console.log(getSelectValues(el));
+}
+
+function getSelectValues(select) {
+    var result = [];
+    var options = select && select.options;
+    console.log('select', select.options);
+    var opt;
+  
+    for (var i=0, iLen=options.length; i<iLen; i++) {
+      opt = options[i];
+  
+      if (opt.selected) {
+        result.push(opt.value || opt.text);
+      }
+    }
+    return result;
+}
+
 export default () => {
     const [searchInput, setSearchInput] = useState('')
     const [currentPage, setCurrentPage] = useState(0)
-    
+    const [selectState, setSelectState] = useState({})
+
     const filteredData = matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']})    
     
     const PER_PAGE = 10
@@ -86,36 +109,34 @@ export default () => {
         setCurrentPage(selectedPage)
     }
 
+    function handleChange(e) {
+        const {name, value} = e.target
+        setSelectState((prev) => {
+            return {
+                ...prev, 
+                [name]: value
+            }
+        })
+    }
+
     return (
         <div className="page-wrap">
-            <div className="manage-user-roles">
-                <h1>Manage User Roles</h1>
-            </div>
             <div className="user-roles-flexlayout">
                 <div className="select-user-select-role">
-                    <p>Select 1 or more Users</p>
+                    <p>Select one or more Users</p>
+                    <select name="userrole" id="" multiple className="user-select">
+                        {userRoles.map((i, index) => (<option key={index} value={i.username}>{i.username}</option>))}
+                    </select>
 
-
-                    <Downshift>
-                        {downshift => (
-                            <div>
-                                <div>amren</div>
-                                <div>miller</div>
-                            </div>
-                        )}
-                    </Downshift>
-
+                    <p>(Select multiple using the ctrl key)</p>
 
                     <hr/>
                     <p>Select the Role to assign</p>
-                    <Downshift>
-                        {downshift => (
-                            <div>
-                                <div>amren</div>
-                                <div>miller</div>
-                            </div>
-                        )}
-                    </Downshift>
+                    
+                    <select name="role" id="" multiple className="role-select" onChange={handleChange}>
+                        {roles.map((i, index) => (<option key={index} value={i}>{i}</option>))}
+                    </select>
+                    
                 </div>
 
                 <div>
@@ -185,3 +206,6 @@ function UserRoles(props) {
         	</table>
         </div>)
 }
+
+
+

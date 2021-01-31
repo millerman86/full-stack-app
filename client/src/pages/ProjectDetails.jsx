@@ -111,7 +111,7 @@ export default () => {
                                 <td>Open</td>
                                 <td>Today(11/2/2020)</td>
                                 <td>
-                                    <a href="">More Details</a>
+                                    <a href="http://www.google.com">More Details</a>
                                 </td>
                             </tr>
                             </tbody>

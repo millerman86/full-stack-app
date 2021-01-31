@@ -95,6 +95,12 @@ table td {
     padding: 5px;
 }
 
+.dropdown-ul {
+    background: white;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
 .table-container {
     min-height: 300px;
 }
@@ -351,4 +357,9 @@ select.select-ticket-type {
 
 .pie-grid {
     min-width: 900px;
+}
+
+.user-select, 
+.role-select {
+    width: 100%;
 }

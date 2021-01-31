@@ -72,7 +72,7 @@ export default () => {
                     <div className="details-for-ticket">
                         <header className="table-header">
                             <h1>Details for Ticket {'ticket number'}</h1>
-                            <a href="" className="back-to-list">Back to List</a> | <a href="" className="edit-ticket">Edit
+                            <a href="#" className="back-to-list">Back to List</a> | <a href="#" className="edit-ticket">Edit
                             Ticket</a>
                         </header>
 

@@ -63,10 +63,10 @@ function YourProjects(props) {
                         <td className="manage-and-details-links">
                             <ul>
                                 <li>
-                                    <a href="">Manage Users</a>
+                                    <a href="http://www.google.com">Manage Users</a>
                                 </li>
                                 <li>
-                                    <a href="">Details</a>
+                                    <a href="http://www.google.com">Details</a>
                                 </li>
                             </ul>
                         </td>

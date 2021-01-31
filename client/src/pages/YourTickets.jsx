@@ -129,7 +129,7 @@ export default () => {
                 {!matchSorter(tickets, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']}).length ? <div className="nothing-to-show">Nothing to Show</div> : null}
                 
                 {matchSorter(tickets, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']}).length ? (<div className="table-pagination-section">
-                    <div>Showing 1 to 10 of {matchSorter(tickets, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']}).length} entries</div>
+                    {/* <div>Showing 1 to 10 of {matchSorter(tickets, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']}).length} entries</div> */}
                     <ReactPaginate
                         previousLabel={'previous'}
                         nextLabel={'next'}

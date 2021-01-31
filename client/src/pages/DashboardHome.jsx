@@ -1,4 +1,3 @@
-import {PromiseProvider} from 'mongoose'
 import React, {Component} from 'react'
 import CanvasJSReact from '../canvasjs.react'
 
