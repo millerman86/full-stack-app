@@ -80,7 +80,7 @@ export default () => {
     const offset = currentPage * PER_PAGE;
     const currentPageData = filteredData
         .slice(offset, offset + PER_PAGE)
-    const pageCount = Math.ceil(userRoles.length / PER_PAGE);
+    const pageCount = Math.ceil(filteredData.length / PER_PAGE);
 
     function handlePageClick({selected: selectedPage}) {
         setCurrentPage(selectedPage)
@@ -127,6 +127,7 @@ export default () => {
                         <div className="table-data-and-input">
                             <span>Show <span><span className="show-number">10</span> </span>entries</span>
                             <input type="text" value={searchInput} onChange={(e) => {
+                                setCurrentPage(0)
                                 setSearchInput(e.target.value)
                             }} />
                         </div>
@@ -136,7 +137,7 @@ export default () => {
                         {!matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']}).length ? (<div className="nothing-to-show">Nothing to show</div>) : null}
                         
                         {matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']}).length ? (<div className="table-pagination-section">
-                            <div>Showing 1 to 10 of {matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']}).length} entries</div>
+                            {/* <div>Showing 1 to  of {matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']}).length} entries</div> */}
                             <ReactPaginate
                                 previousLabel={'previous'}
                                 nextLabel={'next'}
@@ -161,24 +162,26 @@ export default () => {
 
 function UserRoles(props) {
     return (
-        <table>
-            <thead>
-            <tr>
-                <th className="username">User Name</th>
-                <th className="email">Email</th>
-                <th className="role">Role</th>
-            </tr>
-            </thead>
-            <tbody>
-            {props.userRoles.map((user, i) => {
-                return (
-                    <tr key={i}>
-                        <td className="username-data">{user.username}</td>
-                        <td className="email-data">{user.email}</td>
-                        <td className="role-data">{user.role}</td>
-                    </tr>
-                )
-            })}
-            </tbody>
-        </table>)
+        <div className="table-container">
+        	<table>
+        	    <thead>
+        	    <tr>
+        	        <th className="username">User Name</th>
+        	        <th className="email">Email</th>
+        	        <th className="role">Role</th>
+        	    </tr>
+        	    </thead>
+        	    <tbody>
+        	    {props.userRoles.map((user, i) => {
+        	        return (
+        	            <tr key={i}>
+        	                <td className="username-data">{user.username}</td>
+        	                <td className="email-data">{user.email}</td>
+        	                <td className="role-data">{user.role}</td>
+        	            </tr>
+        	        )
+        	    })}
+        	    </tbody>
+        	</table>
+        </div>)
 }

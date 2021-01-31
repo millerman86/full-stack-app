@@ -74,6 +74,10 @@ header.table-header p {
     margin: 10px 0;
 }
 
+tbody {
+    min-height: 261px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -89,6 +93,10 @@ table thead th {
 
 table td {
     padding: 5px;
+}
+
+.table-container {
+    min-height: 300px;
 }
 
 ul.pagination {

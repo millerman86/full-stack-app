@@ -30,7 +30,88 @@ let projects = [
         ticketStatus: 'blah',
         ticketType: 'blah',
         created: 'blah'
-    }
+    }, 
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    }, 
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    }, 
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    }, 
 ]
 
 
@@ -44,7 +125,7 @@ export default () => {
     const offset = currentPage * PER_PAGE;
     const currentPageData = filteredData
         .slice(offset, offset + PER_PAGE)
-    const pageCount = Math.ceil(projects.length / PER_PAGE);
+    const pageCount = Math.ceil(filteredData.length / PER_PAGE);
 
     function handlePageClick({selected: selectedPage}) {
         setCurrentPage(selectedPage)
@@ -96,42 +177,44 @@ function YourTickets(props) {
     const {projects} = props
 
     return (
-        <table>
-            <thead>
-            <tr>
-                <th className="title">Title</th>
-                <th className="project-name">Project Name</th>
-                <th className="developer-assigned">Developer Assigned</th>
-                <th className="project-priority">Project Priority</th>
-                <th className="project-status">Project Status</th>
-                <th className="project-type">Project Type</th>
-                <th className="created">Created</th>
-                <th className="editorassign-and-details"></th>
-            </tr>
-            </thead>
-            <tbody>
-
-            {projects.map((project, i) => {
-                return (
-                    <tr key={i}>
-                        <td className="title-data">blah</td>
-                        <td className="project-name-data">blah</td>
-                        <td className="developer-assigned-data">blah</td>
-                        <td className="project-priority-data">blah</td>
-                        <td className="project-status-data">blah</td>
-                        <td className="project-type-data">blah</td>
-                        <td className="created-data">blah</td>
-                        <td className="editorassign-and-details">
-                            <ul>
-                                <li className="edit-or-assign"><a href="">Edit/assign</a></li>
-                                <li className="details"><a href="">Details</a></li>
-                            </ul>
-                        </td>
-                    </tr>
-                )
-            })}
-
-            </tbody>
-        </table>
+        <div className="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th className="title">Title</th>
+                    <th className="project-name">Project Name</th>
+                    <th className="developer-assigned">Developer Assigned</th>
+                    <th className="project-priority">Project Priority</th>
+                    <th className="project-status">Project Status</th>
+                    <th className="project-type">Project Type</th>
+                    <th className="created">Created</th>
+                    <th className="editorassign-and-details"></th>
+                </tr>
+                </thead>
+                <tbody>
+    
+                {projects.map((project, i) => {
+                    return (
+                        <tr key={i}>
+                            <td className="title-data">blah</td>
+                            <td className="project-name-data">blah</td>
+                            <td className="developer-assigned-data">blah</td>
+                            <td className="project-priority-data">blah</td>
+                            <td className="project-status-data">blah</td>
+                            <td className="project-type-data">blah</td>
+                            <td className="created-data">blah</td>
+                            <td className="editorassign-and-details">
+                                <ul>
+                                    <li className="edit-or-assign"><a href="">Edit/assign</a></li>
+                                    <li className="details"><a href="">Details</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    )
+                })}
+    
+                </tbody>
+            </table>
+        </div>
     )
 }

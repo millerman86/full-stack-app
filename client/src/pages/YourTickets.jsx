@@ -31,7 +31,62 @@ let tickets = [
         ticketStatus: 'blah',
         ticketType: 'blah',
         created: 'blah'
-    }
+    }, 
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    }, 
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    },
+    {
+        title: 'blah',
+        project: 'blah',
+        developerAssigned: 'blah',
+        ticketPriority: 'blah',
+        ticketStatus: 'blah',
+        ticketType: 'blah',
+        created: 'blah'
+    }, 
+    
 ]
 
 
@@ -48,7 +103,7 @@ export default () => {
         .slice(offset, offset + PER_PAGE)
         
     console.log('current', currentPageData);
-    const pageCount = Math.ceil(tickets.length / PER_PAGE);
+    const pageCount = Math.ceil(filteredData.length / PER_PAGE);
 
     function handlePageClick({selected: selectedPage}) {
         setCurrentPage(selectedPage)
@@ -100,42 +155,44 @@ function YourTickets(props) {
     const {tickets} = props
 
     return (
-        <table>
-            <thead>
-            <tr>
-                <th className="title">Title</th>
-                <th className="project-name">Project Name</th>
-                <th className="developer-assigned">Developer Assigned</th>
-                <th className="ticket-priority">Ticket Priority</th>
-                <th className="ticket-status">Ticket Status</th>
-                <th className="ticket-type">Ticket Type</th>
-                <th className="created">Created</th>
-                <th className="editorassign-and-details"></th>
-            </tr>
-            </thead>
-            <tbody>
-
-            {tickets.map((ticket, i) => {
-                return (
-                    <tr key={i}>
-                        <td className="title-data">blah</td>
-                        <td className="project-name-data">blah</td>
-                        <td className="developer-assigned-data">blah</td>
-                        <td className="ticket-priority-data">blah</td>
-                        <td className="ticket-status-data">blah</td>
-                        <td className="ticket-type-data">blah</td>
-                        <td className="created-data">blah</td>
-                        <td className="editorassign-and-details">
-                            <ul>
-                                <li className="edit-or-assign"><a href="">Edit/assign</a></li>
-                                <li className="details"><a href="">Details</a></li>
-                            </ul>
-                        </td>
-                    </tr>
-                )
-            })}
-
-            </tbody>
-        </table>
+        <div className="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th className="title">Title</th>
+                    <th className="project-name">Project Name</th>
+                    <th className="developer-assigned">Developer Assigned</th>
+                    <th className="ticket-priority">Ticket Priority</th>
+                    <th className="ticket-status">Ticket Status</th>
+                    <th className="ticket-type">Ticket Type</th>
+                    <th className="created">Created</th>
+                    <th className="editorassign-and-details"></th>
+                </tr>
+                </thead>
+                <tbody>
+    
+                {tickets.map((ticket, i) => {
+                    return (
+                        <tr key={i}>
+                            <td className="title-data">blah</td>
+                            <td className="project-name-data">blah</td>
+                            <td className="developer-assigned-data">blah</td>
+                            <td className="ticket-priority-data">blah</td>
+                            <td className="ticket-status-data">blah</td>
+                            <td className="ticket-type-data">blah</td>
+                            <td className="created-data">blah</td>
+                            <td className="editorassign-and-details">
+                                <ul>
+                                    <li className="edit-or-assign"><a href="">Edit/assign</a></li>
+                                    <li className="details"><a href="">Details</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    )
+                })}
+    
+                </tbody>
+            </table>
+        </div>
     )
 }
