@@ -38,6 +38,15 @@ header.table-header {
     padding: 10px 10px;
 }
 
+header.table-header h2 {
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+header.table-header p {
+    margin-left: 10px;
+}
+
 .user-roles-flexlayout {
     display: flex;
 }
@@ -72,11 +81,23 @@ table {
 
 table th {
     text-align: left;
-
 }
 
 table thead th {
     border-bottom: 1px solid black;
+}
+
+table td {
+    padding: 5px;
+}
+
+ul.pagination {
+    display: flex; 
+}
+
+ul.pagination a {
+    margin: 5px;
+    padding: 5px;
 }
 
 .personnel-section,
@@ -121,6 +142,7 @@ table thead th {
 
 .nothing-to-show {
     text-align: center;
+    padding: 10px;
 }
 
 .page-wrap {

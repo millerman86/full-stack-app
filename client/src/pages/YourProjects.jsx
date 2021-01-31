@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { matchSorter } from 'match-sorter'
+import ReactPaginate from 'react-paginate'
 
 
 let projects = [
@@ -33,19 +35,57 @@ let projects = [
 
 
 export default () => {
+    const [searchInput, setSearchInput] = useState('')
+    const [currentPage, setCurrentPage] = useState(0)
+
+    const filteredData = matchSorter(projects, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']})    
+    
+    const PER_PAGE = 10
+    const offset = currentPage * PER_PAGE;
+    const currentPageData = filteredData
+        .slice(offset, offset + PER_PAGE)
+    const pageCount = Math.ceil(projects.length / PER_PAGE);
+
+    function handlePageClick({selected: selectedPage}) {
+        setCurrentPage(selectedPage)
+    }
+
+
     return (
         <div className="page-wrap">
             <div className="your-tickets">
                 <header className="table-header">
-                    <h1>Your Projects</h1>
-                    <a href="" className="back-to-list">All the Projects in the Database</a>
+                    <h2>Your Projects</h2>
+                    <p>All the projects in the database</p>
                 </header>
                 <div className="table-data-and-input">
                     <span>Showing <span>{10}</span> entries </span>
-                    <input type="text"/>
+                    <input type="text" value={searchInput} onChange={(e) => {
+                        setSearchInput(e.target.value)
+                    }}/>
                 </div>
-                <YourTickets projects={projects}/>
-                {!projects.length ? <div>Nothing to Show</div> : null}
+
+                <YourTickets projects={currentPageData} />
+                
+                {!matchSorter(projects, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']}).length ? <div className="nothing-to-show">Nothing to Show</div> : null}
+                
+                {matchSorter(projects, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']}).length ? (<div className="table-pagination-section">
+                    <div>Showing 1 to 10 of {matchSorter(projects, searchInput, {keys: ['title', 'project', 'developerAssigned', 'ticketPriority', 'ticketStatus', 'ticketType', 'created']}).length} entries</div>
+                    <ReactPaginate
+                        previousLabel={'previous'}
+                        nextLabel={'next'}
+                        breakLabel={'...'}
+                        breakClassName={'break-me'}
+                        pageCount={pageCount}
+                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={5}
+                        onPageChange={handlePageClick}
+                        containerClassName={'pagination'}
+                        subContainerClassName={'pages pagination'}
+                        activeClassName={'active'}
+                    />
+                </div>) : null}
+                
             </div>
         </div>
     )

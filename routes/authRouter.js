@@ -5,7 +5,6 @@ const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 
 
-
 authRouter.post('/signup', (req, res, next) => {
     User.findOne({username: req.body.username.toLowerCase()}, (err, user) => {
         if (err) {
@@ -15,7 +14,7 @@ authRouter.post('/signup', (req, res, next) => {
         if (user) {
             res.status(403)
             return next(new Error('That username is already taken'))
-        } 
+        }
         const newUser = new User(req.body)
         newUser.save((err, savedUser) => {
             if (err) {

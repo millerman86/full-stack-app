@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     useRouteMatch
 } from 'react-router-dom'
 import Downshift from 'downshift'
+import { matchSorter } from 'match-sorter'
+import ReactPaginate from 'react-paginate'
 
 
 const userRoles = [
@@ -21,10 +23,69 @@ const userRoles = [
         email: 'amrenmiller@gmail.com',
         role: 'admin'
     },
+    {
+        username: 'amren',
+        email: 'amrenmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'amren',
+        email: 'amrenmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'amren',
+        email: 'amrenmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'amren',
+        email: 'amrenmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'bob',
+        email: 'bobmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'bob',
+        email: 'bobmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'bob',
+        email: 'bobmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'bob',
+        email: 'bobmiller@gmail.com',
+        role: 'admin'
+    },
+    {
+        username: 'bob',
+        email: 'bobmiller@gmail.com',
+        role: 'admin'
+    },
 ]
 
-
 export default () => {
+    const [searchInput, setSearchInput] = useState('')
+    const [currentPage, setCurrentPage] = useState(0)
+    
+    const filteredData = matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']})    
+    
+    const PER_PAGE = 10
+    const offset = currentPage * PER_PAGE;
+    const currentPageData = filteredData
+        .slice(offset, offset + PER_PAGE)
+    const pageCount = Math.ceil(userRoles.length / PER_PAGE);
+
+    function handlePageClick({selected: selectedPage}) {
+        setCurrentPage(selectedPage)
+    }
+
     return (
         <div className="page-wrap">
             <div className="manage-user-roles">
@@ -65,16 +126,32 @@ export default () => {
                         </header>
                         <div className="table-data-and-input">
                             <span>Show <span><span className="show-number">10</span> </span>entries</span>
-                            <input type="text"/>
+                            <input type="text" value={searchInput} onChange={(e) => {
+                                setSearchInput(e.target.value)
+                            }} />
                         </div>
 
-                        <UserRoles userRoles={userRoles}/>
+                        <UserRoles userRoles={currentPageData} />
 
-                        {!userRoles.length ? (<div className="nothing-to-show">Nothing to show</div>) : null}
-                        <div className="table-pagination-section">
-                            <div>Showing 1 to 10 of 13 entries</div>
-                            <div><span>Previous</span><span>1</span><span>2</span><span>Next</span></div>
-                        </div>
+                        {!matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']}).length ? (<div className="nothing-to-show">Nothing to show</div>) : null}
+                        
+                        {matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']}).length ? (<div className="table-pagination-section">
+                            <div>Showing 1 to 10 of {matchSorter(userRoles, searchInput, {keys: ['username', 'email', 'role']}).length} entries</div>
+                            <ReactPaginate
+                                previousLabel={'previous'}
+                                nextLabel={'next'}
+                                breakLabel={'...'}
+                                breakClassName={'break-me'}
+                                pageCount={pageCount}
+                                marginPagesDisplayed={2}
+                                pageRangeDisplayed={5}
+                                onPageChange={handlePageClick}
+                                containerClassName={'pagination'}
+                                subContainerClassName={'pages pagination'}
+                                activeClassName={'active'}
+                            />
+                        </div>) : null}
+                        
                     </div>
                 </div>
             </div>

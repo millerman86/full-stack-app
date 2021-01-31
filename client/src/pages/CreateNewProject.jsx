@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+// Mock data
 let projects = [
     {
         name: 'myproject',
@@ -15,7 +16,6 @@ let projects = [
         description: 'this is a project'
     }
 ]
-
 
 export default () => {
     return (
@@ -42,7 +42,6 @@ export default () => {
             </div>
         </div>)
 }
-
 
 function YourProjects(props) {
     const {projects} = props

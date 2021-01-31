@@ -47,10 +47,11 @@ import {
 } from 'react-icons/fa'
 
 
+
+
 function App(props) {
 
     const {token, logout} = useContext(UserContext)
-
 
     const location = window.location.pathname
     return (
@@ -133,7 +134,7 @@ function App(props) {
                         <Switch>
                             <Route
                                 exact path="/"
-                                render={() => (token ? <Redirect to="/blah"/> : <Auth/>)}
+                                render={() => (token ? <Redirect to="/dashboardhome"/> : <Auth/>)}
                             />
                             <ProtectedRoute
                                 // THIS MIGHT BE '/'
